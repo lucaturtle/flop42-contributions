@@ -1,3 +1,5 @@
+# Copyright 2026 lucaturtle
+# SPDX-License-Identifier: Apache-2.0
 """Offline counterexamples against the unchanged v0.1 workbench, not a live test."""
 import json
 import tempfile

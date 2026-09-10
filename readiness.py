@@ -1,3 +1,5 @@
+# Copyright 2026 lucaturtle
+# SPDX-License-Identifier: Apache-2.0
 """Offline receipt and release-integrity helpers. No network or signer exists here."""
 import hashlib
 import json

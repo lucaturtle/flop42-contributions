@@ -1,3 +1,5 @@
+# Copyright 2026 lucaturtle
+# SPDX-License-Identifier: Apache-2.0
 """Hostile metadata checks: rehash tampering so semantic validation is exercised."""
 import hashlib
 import json

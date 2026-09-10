@@ -5,21 +5,24 @@
     "exit_code": 0,
     "passed": 5
   },
+  "license_authorization": "operator-confirmed",
   "network_spend": 0,
-  "new_package_independent_review": "pending",
+  "new_package_independent_review": "not-independently-verified",
+  "operator_reported_v2_review": "reviewed-and-approved",
+  "original_material_license": "Apache-2.0",
   "package_unit_tests": {
     "exit_code": 0,
-    "passed": 36
+    "passed": 40
   },
   "public_submission": null,
-  "recorded_at": "2026-09-10T11:01:13.422809+00:00",
+  "recorded_at": "2026-09-10T11:13:42.742566+00:00",
   "remote_repository_readback": false,
-  "review_type": "coordinator-follow-up-review",
-  "revision": "v2",
+  "review_type": "licensing-and-attribution-update",
+  "revision": "v3",
   "tclk_prior_independent_review": "historical-approval-for-unchanged-patch",
   "tclk_tests": {
     "evidence_origin": "historical v1 coordinator run, 2026-09-10",
-    "rerun_in_v2": false,
+    "rerun_in_this_revision": false,
     "total": 178
   }
 }

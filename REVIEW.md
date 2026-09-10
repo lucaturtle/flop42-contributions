@@ -1,5 +1,20 @@
 # V2 coordinator review
 
+## V3 licensing addendum
+
+The operator reported v2 "reviewed and approved" and subsequently authorized
+Apache-2.0 for original material. This is recorded as operator-reported approval,
+not a newly verified independent audit. V3 supplies the root LICENSE, source
+license headers, scope notes, and the previously omitted upstream TCLK NOTICE.
+The exact patch and frozen workbench are unchanged. Runtime behavior is unchanged;
+metadata hashes and test evidence are refreshed for v3.
+
+The historical license-decision gate below is now resolved. The external upstream
+recheck, no-live-execution safeguards, and distinction between reported and
+independently verified approval remain. This package was not uploaded by the agent.
+
+## Historical v2 report (retained)
+
 Scope: the local v1 contribution export and a separate v2 revision. The GitHub
 upload was not accessed or changed. This is another coordinator review, not an
 independent security audit. Neither version is declared production-ready.

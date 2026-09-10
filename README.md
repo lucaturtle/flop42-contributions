@@ -1,7 +1,11 @@
-# FLOP-42 contribution and inference-readiness package — v2
+# FLOP-42 contribution and inference-readiness package — v3 (licensing update)
 
 An independent, common-operator engineering contribution. Not a FLOP Labs product,
 an eligibility checker, a faucet, or an allocation claim.
+
+Original material is licensed under Apache-2.0; see `LICENSE`,
+`LICENSE-NOTES.md`, and `NOTICE`. Upstream TCLK license and attribution are
+preserved in `TCLK-LICENSE` and `TCLK-NOTICE`.
 
 ## What is actually delivered
 
@@ -22,9 +26,11 @@ an eligibility checker, a faucet, or an allocation claim.
 - Real FLOP spent: zero. All mock balances are fictional test integers.
 - The original workbench is included only as a frozen test fixture with known defects.
   Do not deploy it for paid inference or treat it as crash-safe.
-- The new verifier and reports are self-tested and await independent review.
-- This v2 revision received another coordinator review, not an independent audit.
-  Findings, fixes and remaining publication gates are in `REVIEW.md`.
+- V2 received a coordinator review. The operator subsequently reported it reviewed
+  and approved; no independent reviewer identity or exact-commit approval was
+  verified here. V3 adds authorized licensing, source headers and attribution,
+  with no runtime behavior change. Tests are rerun for this revision.
+  Historical findings and the v3 addendum are in `REVIEW.md`.
 - The TCLK patch has prior independent review; publication still requires a chosen
   account/repository and a final upstream check. It is not submitted or accepted.
 - Logical Agent 00–41 maps to the operator's existing bot-01–42 aliases. These are
@@ -43,7 +49,7 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=fixtures/workbench/src python3 probe_queue.
 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=fixtures/workbench/src python3 -m unittest discover -s fixtures/workbench/tests -v
 ```
 
-The last command reports known defects. A successful reproduction is not a passing
+The `probe_queue.py` command reports known defects. A successful reproduction is not a passing
 production safety test. The checks use temporary local databases and no network.
 The manifest verifies file integrity, not publisher identity or external acceptance.
 Run these commands from a clean exported package, not a Git checkout containing

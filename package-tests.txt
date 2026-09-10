@@ -1,4 +1,4 @@
-V2 package regression tests
+V3 package regression tests
 test_boolean_budget (test_evidence.EvidenceTests.test_boolean_budget) ... ok
 test_boolean_role (test_evidence.EvidenceTests.test_boolean_role) ... ok
 test_duplicate_roles (test_evidence.EvidenceTests.test_duplicate_roles) ... ok
@@ -13,6 +13,10 @@ test_unknown_workload_field (test_evidence.EvidenceTests.test_unknown_workload_f
 test_unsafe_input_path (test_evidence.EvidenceTests.test_unsafe_input_path) ... ok
 test_wrong_alias (test_evidence.EvidenceTests.test_wrong_alias) ... ok
 test_wrong_receipt_result (test_evidence.EvidenceTests.test_wrong_receipt_result) ... ok
+test_original_source_headers (test_licensing.LicensingTests.test_original_source_headers) ... ok
+test_reviewed_patch_unchanged (test_licensing.LicensingTests.test_reviewed_patch_unchanged) ... ok
+test_root_license_and_scope (test_licensing.LicensingTests.test_root_license_and_scope) ... ok
+test_upstream_notice_preserved (test_licensing.LicensingTests.test_upstream_notice_preserved) ... ok
 test_exact_frozen_counterexamples (test_probe_queue.ProbeTests.test_exact_frozen_counterexamples) ... ok
 test_repeated_probe_is_deterministic (test_probe_queue.ProbeTests.test_repeated_probe_is_deterministic) ... ok
 test_changed_file (test_readiness.PackageTests.test_changed_file) ... ok
@@ -37,7 +41,7 @@ test_unknown_and_missing_fields (test_readiness.ReceiptTests.test_unknown_and_mi
 test_valid_receipt (test_readiness.ReceiptTests.test_valid_receipt) ... ok
 
 ----------------------------------------------------------------------
-Ran 36 tests in 0.207s
+Ran 40 tests in 0.232s
 
 OK
 
@@ -49,6 +53,6 @@ test_expired_lease_is_resumable_and_owner_guarded (test_workbench.WorkbenchTests
 test_retry_becomes_terminal_at_bound (test_workbench.WorkbenchTests.test_retry_becomes_terminal_at_bound) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.008s
+Ran 5 tests in 0.010s
 
 OK

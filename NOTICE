@@ -1,0 +1,16 @@
+FLOP-42 contribution and inference-readiness package
+Original contribution material: Copyright 2026 lucaturtle
+Licensed under the Apache License, Version 2.0. See LICENSE and LICENSE-NOTES.md.
+
+This independent common-operator project is not a FLOP Labs product or endorsement.
+The bundled patch proposes changes to TCLK; its paths and scope are documented in
+TCLK-SUBMISSION.md. The frozen workbench remains an unchanged offline test fixture.
+
+Upstream TCLK notice (reproduced unchanged below):
+
+tclk
+Copyright 2026 FLOP Labs
+
+This product includes software developed at FLOP Labs (https://flop.network).
+
+Licensed under the Apache License, Version 2.0. See LICENSE.

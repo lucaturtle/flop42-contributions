@@ -1,12 +1,13 @@
 {
   "common_operator": true,
+  "executed_by": "coordinator",
   "external_reference": null,
+  "finding_count": 5,
   "input_sha256": "fa2ea1a9b0d54f8f01585c6c65f28a12d5d643e4b643c3d38fc48ec5d6be5629",
-  "logical_agent": 0,
   "mode": "offline",
-  "quality": "fail",
+  "probe_sha256": "6ed426c24001673a55e305a0c51698de7fe955f0c7a98182d940443848406209",
+  "quality": "known-defects-reproduced",
   "real_token_spend": 0,
-  "result_sha256": "3dd556e72bddf127aab60c64f24f95d89a251794d4296c5cac916799ba56cb87",
-  "schema": "flop42-offline-receipt-v1",
-  "workload_id": "W02"
+  "result_sha256": "2591ff36ef9986611f1399844cbf9164ebea58c85a5308bb9202f0d541a450b9",
+  "schema": "flop42-coordinator-diagnostic-v1"
 }

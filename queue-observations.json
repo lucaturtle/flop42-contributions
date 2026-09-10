@@ -1,13 +1,55 @@
 {
-  "mode": "offline-counterexamples",
-  "live_requests": 0,
-  "real_token_spend": 0,
   "findings": [
-    {"id":"Q1","expected":"expired completion rejected","observed":"completed","defect_reproduced":true},
-    {"id":"Q2","expected":"old lease rejected after name reuse","observed":"stale-first-lease","attempts":[1,2],"defect_reproduced":true},
-    {"id":"Q3","expected":"at most 3 product attempts","observed":[1,2,3,4],"defect_reproduced":true},
-    {"id":"Q4","expected":"completion evidence recoverable atomically","observed":{"job_status":"completed","journal_entries":0,"raised":"job lease is not held by this worker"},"defect_reproduced":true},
-    {"id":"Q5","expected":"same mock request charged once","observed":{"same_session":true,"mock_charges":2},"defect_reproduced":true}
+    {
+      "defect_reproduced": true,
+      "expected": "expired completion rejected",
+      "id": "Q1",
+      "observed": "completed"
+    },
+    {
+      "attempts": [
+        1,
+        2
+      ],
+      "defect_reproduced": true,
+      "expected": "old lease rejected after name reuse",
+      "id": "Q2",
+      "observed": "stale-first-lease"
+    },
+    {
+      "defect_reproduced": true,
+      "expected": "at most 3 product attempts",
+      "id": "Q3",
+      "observed": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "defect_reproduced": true,
+      "expected": "completion evidence recoverable atomically",
+      "id": "Q4",
+      "observed": {
+        "job_status": "completed",
+        "journal_append_attempts": 1,
+        "journal_entries": 0,
+        "raised": "job lease is not held by this worker"
+      }
+    },
+    {
+      "defect_reproduced": true,
+      "expected": "same mock request charged once",
+      "id": "Q5",
+      "observed": {
+        "mock_charges": 2,
+        "same_session": true
+      }
+    }
   ],
-  "independent_review": "pending"
+  "independent_review": "pending",
+  "live_requests": 0,
+  "mode": "offline-counterexamples",
+  "real_token_spend": 0
 }

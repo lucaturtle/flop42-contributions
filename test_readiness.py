@@ -2,6 +2,7 @@ import hashlib
 import json
 import tempfile
 import unittest
+import os
 from pathlib import Path
 from readiness import validate_receipt, strict_json, verify_package, deduplicate_workload
 
@@ -32,7 +33,21 @@ class ReceiptTests(unittest.TestCase):
         with self.assertRaises(ValueError): strict_json('{"mode":"offline","mode":"testnet"}')
 
     def test_nonfinite_json(self):
-        with self.assertRaises(ValueError): strict_json('{"value":NaN}')
+        for value in ("NaN", "Infinity", "-Infinity", "1e999", "-1e999"):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                strict_json('{"value":' + value + '}')
+
+    def test_finite_float(self):
+        self.assertEqual(strict_json('{"value":1.25e2}'), {"value": 125.0})
+
+    def test_nested_duplicate_json(self):
+        with self.assertRaises(ValueError):
+            strict_json('{"outer":[{"key":1,"key":2}]}')
+
+    def test_invalid_dedup_types(self):
+        for args in ((None, "a"*64), ("W01", None), (1, 2)):
+            with self.subTest(args=args), self.assertRaises(ValueError):
+                deduplicate_workload(*args)
 
     def test_deduplication_is_identity_independent(self):
         expected = deduplicate_workload("W01", "a"*64)
@@ -70,6 +85,33 @@ class PackageTests(unittest.TestCase):
 
     def test_parent_escape(self):
         (self.root / "manifest.json").write_text(json.dumps({"schema":"flop42-package-v1", "files":{"../outside":"a"*64}}))
+        with self.assertRaises(ValueError): verify_package(self.root)
+
+    def test_symlink_manifest(self):
+        original = self.root / "manifest.json"
+        original.rename(self.root / "saved.json")
+        original.symlink_to(self.root / "saved.json")
+        with self.assertRaises(ValueError): verify_package(self.root)
+
+    def test_symlink_directory(self):
+        (self.root / "directory").symlink_to(self.root, target_is_directory=True)
+        with self.assertRaises(ValueError): verify_package(self.root)
+
+    def test_symlink_root(self):
+        with tempfile.TemporaryDirectory() as outer:
+            link = Path(outer) / "link"
+            link.symlink_to(self.root, target_is_directory=True)
+            with self.assertRaises(ValueError): verify_package(link)
+
+    @unittest.skipUnless(hasattr(os, "mkfifo"), "POSIX special-file test")
+    def test_special_file(self):
+        os.mkfifo(self.root / "pipe")
+        with self.assertRaises(ValueError): verify_package(self.root)
+
+    def test_invalid_digest(self):
+        manifest = self.root / "manifest.json"
+        manifest.write_text(json.dumps({"schema": "flop42-package-v1",
+                                       "files": {"README.md": "not-a-digest"}}))
         with self.assertRaises(ValueError): verify_package(self.root)
 
 

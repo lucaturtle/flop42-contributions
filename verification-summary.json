@@ -1,19 +1,25 @@
 {
+  "agent_workloads_executed": 0,
   "diagnostic_findings": 5,
+  "frozen_fixture_tests": {
+    "exit_code": 0,
+    "passed": 5
+  },
   "network_spend": 0,
   "new_package_independent_review": "pending",
   "package_unit_tests": {
     "exit_code": 0,
-    "passed": 12
+    "passed": 36
   },
   "public_submission": null,
-  "recorded_at": "2026-09-10T10:25:53.046886+00:00",
-  "tclk_prior_independent_review": "approved-for-exact-patch-hash",
+  "recorded_at": "2026-09-10T11:01:13.422809+00:00",
+  "remote_repository_readback": false,
+  "review_type": "coordinator-follow-up-review",
+  "revision": "v2",
+  "tclk_prior_independent_review": "historical-approval-for-unchanged-patch",
   "tclk_tests": {
-    "evidence_origin": "coordinator-executed build/test output, 2026-09-10",
-    "library": 105,
-    "mcp": 40,
-    "total": 178,
-    "worker": 33
+    "evidence_origin": "historical v1 coordinator run, 2026-09-10",
+    "rerun_in_v2": false,
+    "total": 178
   }
 }

@@ -56,7 +56,7 @@
       "id": "W03",
       "input": {
         "path": "probe_queue.py",
-        "sha256": "c80e261492763e7cfd60169b69e7cb78d13d9aa8c5b6b37e68a58484e7ec8854"
+        "sha256": "6ed426c24001673a55e305a0c51698de7fe955f0c7a98182d940443848406209"
       },
       "live_dispatch": false,
       "model": null,
@@ -99,7 +99,7 @@
       "id": "W05",
       "input": {
         "path": "readiness.py",
-        "sha256": "906b55a423b10095050477c13d98726b2d3e53d6ee0c5e2ceb129f6389a2ef38"
+        "sha256": "b73fe3c49d2471b7acec2eb3746c3a34cc17afce1f18bb9affe3072acdae807b"
       },
       "live_dispatch": false,
       "model": null,
@@ -121,7 +121,7 @@
       "id": "W06",
       "input": {
         "path": "README.md",
-        "sha256": "873218e58c69c3e5222c63242fbbe77d022dbca2eabf0ca15b739e92d0fb5fc5"
+        "sha256": "8bd06eb7184a1c15fe2f116f9a2124eaec9b2489bb079e7676db2ddd4715c2d9"
       },
       "live_dispatch": false,
       "model": null,
@@ -143,7 +143,7 @@
       "id": "W07",
       "input": {
         "path": "SOURCE-NOTES.md",
-        "sha256": "b63063ebc47fd4819ee576d40121b35f40b9d7fc28cd898b0860fa367c5cc08d"
+        "sha256": "c62bafd55bd5d2261686e55d68aff47881530596052137e17b1f5063c81b2ba8"
       },
       "live_dispatch": false,
       "model": null,
@@ -168,7 +168,7 @@
       "id": "W08",
       "input": {
         "path": "TCLK-SUBMISSION.md",
-        "sha256": "3aa9bb1acfa026b51b1298c8483a288a06d7904a7bac2d8c33df8b8adac1fcde"
+        "sha256": "938d078640c788fce9d767b497742f26e1161892fa7ccd6dbc22ad8d3cc441e2"
       },
       "live_dispatch": false,
       "model": null,
@@ -189,7 +189,7 @@
       "id": "W09",
       "input": {
         "path": "QUEUE-FINDINGS.md",
-        "sha256": "c578dcede0d48bc9fa1d624bb7888132874f648ccb2bb229f82b4db2af8605c5"
+        "sha256": "7cb061f8aed6f645149c64555ac4c4e99d5c4823fecf6583de687bea43281ab0"
       },
       "live_dispatch": false,
       "model": null,
@@ -257,7 +257,7 @@
       "id": "W12",
       "input": {
         "path": "README.md",
-        "sha256": "873218e58c69c3e5222c63242fbbe77d022dbca2eabf0ca15b739e92d0fb5fc5"
+        "sha256": "8bd06eb7184a1c15fe2f116f9a2124eaec9b2489bb079e7676db2ddd4715c2d9"
       },
       "live_dispatch": false,
       "model": null,

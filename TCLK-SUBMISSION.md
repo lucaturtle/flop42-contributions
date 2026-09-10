@@ -27,7 +27,8 @@ Prior independent local review: September 4; exact revised hash approved.
 
 ## Overlap check
 
-Official main remains at the base above. Issue #26 remains open. All 61 open PR
+In the September 10 preparation snapshot, official main was at the base above and
+issue #26 was open. All 61 then-open PR
 titles/bodies were screened. Relevant implementation diffs were checked for #124,
 #16 and #66. No equivalent decoder-wide duplicate-member check was identified in
 that screen; this is not an exhaustive proof about every line of every PR.
@@ -44,4 +45,6 @@ wording. Recheck all of these immediately before submitting/rebasing.
 One common-operator project assisted by AI, not 42 independent contributions.
 Credit the original interoperability report in #26. Tests were local, not paid
 FLOP inference; no tokens, airdrop entitlement or external acceptance are claimed.
-Publication target/account is still an operator choice.
+Operator-selected hosting account: lucaturtle. The operator reports uploading v1
+to a private repository. Its contents were not read back in this local v2 review.
+No upstream PR submission is claimed. Refresh the overlap screen before submission.

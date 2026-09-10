@@ -3,6 +3,8 @@
 Scope: the locally authored prototype, not official FLOP/Technocore software.
 Evidence: `queue-observations.json`; exact target bytes are pinned in `manifest.json`.
 Reviewer status: independent review pending. Original implementation unchanged.
+V2 reruns the counterexamples and checks their exact observed states. This is
+coordinator regression review, not independent approval or a production queue fix.
 
 | ID | Reproduction | Observed result | Required improvement before live use |
 |---|---|---|---|
@@ -22,3 +24,8 @@ coverage, not to reclassify the results as successful paid-inference readiness.
 
 These diagnostics do not claim completion of the separate OPS-001/OPS-002 admission
 plans: in particular, the 100-seed four-connection matrix has not been executed here.
+
+Additional review boundary: the fixture's `validate_activation_document` only
+checks supplied fields and a URL/digest shape. It neither fetches the document nor
+verifies that its digest or contents establish live availability. It is not an
+authorization gate for a future live adapter. The new package executes no adapter.

@@ -1,17 +1,54 @@
+V2 package regression tests
+test_boolean_budget (test_evidence.EvidenceTests.test_boolean_budget) ... ok
+test_boolean_role (test_evidence.EvidenceTests.test_boolean_role) ... ok
+test_duplicate_roles (test_evidence.EvidenceTests.test_duplicate_roles) ... ok
+test_duplicate_workload (test_evidence.EvidenceTests.test_duplicate_workload) ... ok
+test_incomplete_diagnostics (test_evidence.EvidenceTests.test_incomplete_diagnostics) ... ok
+test_receipt_boolean_spend (test_evidence.EvidenceTests.test_receipt_boolean_spend) ... ok
+test_receipt_false_attribution (test_evidence.EvidenceTests.test_receipt_false_attribution) ... ok
+test_rehashed_live_activation (test_evidence.EvidenceTests.test_rehashed_live_activation) ... ok
+test_rehashed_stale_input (test_evidence.EvidenceTests.test_rehashed_stale_input) ... ok
+test_release_links (test_evidence.EvidenceTests.test_release_links) ... ok
+test_unknown_workload_field (test_evidence.EvidenceTests.test_unknown_workload_field) ... ok
+test_unsafe_input_path (test_evidence.EvidenceTests.test_unsafe_input_path) ... ok
+test_wrong_alias (test_evidence.EvidenceTests.test_wrong_alias) ... ok
+test_wrong_receipt_result (test_evidence.EvidenceTests.test_wrong_receipt_result) ... ok
+test_exact_frozen_counterexamples (test_probe_queue.ProbeTests.test_exact_frozen_counterexamples) ... ok
+test_repeated_probe_is_deterministic (test_probe_queue.ProbeTests.test_repeated_probe_is_deterministic) ... ok
 test_changed_file (test_readiness.PackageTests.test_changed_file) ... ok
 test_extra_file (test_readiness.PackageTests.test_extra_file) ... ok
+test_invalid_digest (test_readiness.PackageTests.test_invalid_digest) ... ok
 test_missing_file (test_readiness.PackageTests.test_missing_file) ... ok
 test_parent_escape (test_readiness.PackageTests.test_parent_escape) ... ok
+test_special_file (test_readiness.PackageTests.test_special_file) ... ok
 test_symlink (test_readiness.PackageTests.test_symlink) ... ok
+test_symlink_directory (test_readiness.PackageTests.test_symlink_directory) ... ok
+test_symlink_manifest (test_readiness.PackageTests.test_symlink_manifest) ... ok
+test_symlink_root (test_readiness.PackageTests.test_symlink_root) ... ok
 test_valid_package (test_readiness.PackageTests.test_valid_package) ... ok
 test_deduplication_is_identity_independent (test_readiness.ReceiptTests.test_deduplication_is_identity_independent) ... ok
 test_duplicate_json (test_readiness.ReceiptTests.test_duplicate_json) ... ok
+test_finite_float (test_readiness.ReceiptTests.test_finite_float) ... ok
+test_invalid_dedup_types (test_readiness.ReceiptTests.test_invalid_dedup_types) ... ok
 test_live_claims_rejected (test_readiness.ReceiptTests.test_live_claims_rejected) ... ok
+test_nested_duplicate_json (test_readiness.ReceiptTests.test_nested_duplicate_json) ... ok
 test_nonfinite_json (test_readiness.ReceiptTests.test_nonfinite_json) ... ok
 test_unknown_and_missing_fields (test_readiness.ReceiptTests.test_unknown_and_missing_fields) ... ok
 test_valid_receipt (test_readiness.ReceiptTests.test_valid_receipt) ... ok
 
 ----------------------------------------------------------------------
-Ran 12 tests in 0.005s
+Ran 36 tests in 0.207s
+
+OK
+
+Frozen fixture tests
+test_activation_gate_accepts_only_explicit_official_evidence (test_workbench.WorkbenchTests.test_activation_gate_accepts_only_explicit_official_evidence) ... ok
+test_end_to_end_retains_result_spend_and_verifiable_evidence (test_workbench.WorkbenchTests.test_end_to_end_retains_result_spend_and_verifiable_evidence) ... ok
+test_evidence_tampering_is_detected (test_workbench.WorkbenchTests.test_evidence_tampering_is_detected) ... ok
+test_expired_lease_is_resumable_and_owner_guarded (test_workbench.WorkbenchTests.test_expired_lease_is_resumable_and_owner_guarded) ... ok
+test_retry_becomes_terminal_at_bound (test_workbench.WorkbenchTests.test_retry_becomes_terminal_at_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.008s
 
 OK

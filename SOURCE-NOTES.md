@@ -1,4 +1,7 @@
-# Official-source boundaries — checked September 10, 2026
+# Official-source boundaries — historical September 10, 2026 preparation snapshot
+
+These notes retain the earlier preparation research. This v2 code review did not
+refresh external sources and does not establish their current state.
 
 - https://flop.finance/intro/yellowpaper/ is an implementation draft, not proof of
   public deployment. Its open items include unresolved allocation/vesting details.

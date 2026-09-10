@@ -1,0 +1,205 @@
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index c9d235e..65add71 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -8,6 +8,9 @@ All notable changes to this project are documented here. Format follows
+ 
+ ### Fixed
+ 
++- `decodeFrame` now rejects duplicate JSON object members at every nesting level, including
++  escape-equivalent names, instead of letting `JSON.parse` silently keep the last value.
++  This follows the existing canonical, fail-closed wire rule and leaves golden vectors unchanged.
+ - `tclk_post_frame` now accepts exact decimal-string nonces in addition to safe integer
+   numbers, so signed Technocore nonces above JavaScript's safe-integer range are preserved
+   without precision loss. Unsafe numeric nonces (> 2^53 - 1) are rejected at the MCP schema
+diff --git a/SPEC.md b/SPEC.md
+index 99e3e67..1e218b6 100644
+--- a/SPEC.md
++++ b/SPEC.md
+@@ -110,7 +110,9 @@ A frame is the 6 chars `tclk1 ` followed by one JSON object, serialized canonica
+ object keys sorted, `,`/`:` separators only, `undefined`-valued keys dropped, every non-ASCII
+ character `\uXXXX`-escaped. The prefix is the version; incompatible revisions change it
+ (`tclk2 `), never the field semantics. Decoding is fail-closed: a known frame type with an
+-unknown key, a missing field, or a malformed value is rejected, never coerced.
++unknown key, a missing field, or a malformed value is rejected, never coerced. Duplicate object
++member names are malformed at every nesting level, including names that become equal after JSON
++escape decoding.
+ 
+ Common field shapes:
+ 
+diff --git a/src/frames.ts b/src/frames.ts
+index 0c27a9a..35e49ad 100644
+--- a/src/frames.ts
++++ b/src/frames.ts
+@@ -459,6 +459,115 @@ export function isTclkLine(text: string): boolean {
+   return text.startsWith(TCLK_PREFIX);
+ }
+ 
++/**
++ * Reject duplicate JSON object members before JSON.parse erases them. Keys are
++ * compared after JSON string escape decoding, so the names "type" and
++ * "\u0074ype" are the same member. This is deliberately a structural
++ * preflight only; JSON.parse remains the authority for the full JSON grammar.
++ */
++function rejectDuplicateObjectKeys(json: string): void {
++  let at = 0;
++
++  const skipWhitespace = (): void => {
++    while (at < json.length && /[\u0009\u000a\u000d\u0020]/.test(json[at]!)) at += 1;
++  };
++
++  const parseString = (): string => {
++    const start = at;
++    if (json[at] !== '"') fail("frame is not valid JSON");
++    at += 1;
++    while (at < json.length) {
++      if (json[at] === "\\") {
++        at += 2;
++        continue;
++      }
++      if (json[at] === '"') {
++        at += 1;
++        try {
++          const value: unknown = JSON.parse(json.slice(start, at));
++          if (typeof value !== "string") fail("frame is not valid JSON");
++          return value;
++        } catch {
++          fail("frame is not valid JSON");
++        }
++      }
++      at += 1;
++    }
++    fail("frame is not valid JSON");
++  };
++
++  const parseValue = (): void => {
++    skipWhitespace();
++    if (json[at] === "{") {
++      parseObject();
++      return;
++    }
++    if (json[at] === "[") {
++      parseArray();
++      return;
++    }
++    if (json[at] === '"') {
++      parseString();
++      return;
++    }
++    const start = at;
++    while (at < json.length && !/[\u0009\u000a\u000d\u0020,\]}]/.test(json[at]!)) at += 1;
++    if (at === start) fail("frame is not valid JSON");
++  };
++
++  const parseObject = (): void => {
++    at += 1;
++    skipWhitespace();
++    const keys = new Set<string>();
++    if (json[at] === "}") {
++      at += 1;
++      return;
++    }
++    while (at < json.length) {
++      const key = parseString();
++      if (keys.has(key)) fail(`duplicate object key: ${key}`);
++      keys.add(key);
++      skipWhitespace();
++      if (json[at] !== ":") fail("frame is not valid JSON");
++      at += 1;
++      parseValue();
++      skipWhitespace();
++      if (json[at] === "}") {
++        at += 1;
++        return;
++      }
++      if (json[at] !== ",") fail("frame is not valid JSON");
++      at += 1;
++      skipWhitespace();
++    }
++    fail("frame is not valid JSON");
++  };
++
++  const parseArray = (): void => {
++    at += 1;
++    skipWhitespace();
++    if (json[at] === "]") {
++      at += 1;
++      return;
++    }
++    while (at < json.length) {
++      parseValue();
++      skipWhitespace();
++      if (json[at] === "]") {
++        at += 1;
++        return;
++      }
++      if (json[at] !== ",") fail("frame is not valid JSON");
++      at += 1;
++    }
++    fail("frame is not valid JSON");
++  };
++
++  parseValue();
++  skipWhitespace();
++  if (at !== json.length) fail("frame is not valid JSON");
++}
++
+ /** Encode a frame to its room-message line. Validates, and enforces the venue caps. */
+ export function encodeFrame(frame: TclkFrame): string {
+   const validated = validateFrame(frame);
+@@ -482,9 +591,11 @@ export function decodeFrame(text: string): TclkFrame {
+   if (text.length > MAX_FRAME_CHARS) {
+     fail(`frame exceeds the ${MAX_FRAME_CHARS}-char room-message cap (${text.length})`);
+   }
++  const json = text.slice(TCLK_PREFIX.length);
++  rejectDuplicateObjectKeys(json);
+   let parsed: unknown;
+   try {
+-    parsed = JSON.parse(text.slice(TCLK_PREFIX.length));
++    parsed = JSON.parse(json);
+   } catch {
+     fail("frame is not valid JSON");
+   }
+diff --git a/tests/tclk.test.ts b/tests/tclk.test.ts
+index 55dace3..81f7719 100644
+--- a/tests/tclk.test.ts
++++ b/tests/tclk.test.ts
+@@ -119,6 +119,38 @@ describe("tclk frames — wire codec", () => {
+     expect(() => baseOffer({ rails: [] })).toThrow(/rails/);
+   });
+ 
++  it("rejects duplicate object keys at every nesting level", () => {
++    const topLevel = encodeFrame(baseOffer()).replace(
++      '"amount":"1000000"',
++      '"amount":"1000000","amount":"2000000"',
++    );
++    expect(() => decodeFrame(topLevel)).toThrow(/duplicate object key: amount/);
++
++    const nested = encodeFrame(baseOffer({ job: a2aJob("task-3f", "ctx-1") })).replace(
++      '"id":"task-3f"',
++      '"id":"task-3f","\\u0069d":"task-4f"',
++    );
++    expect(() => decodeFrame(nested)).toThrow(/duplicate object key: id/);
++
++    const inArray = encodeFrame(baseOffer()).replace(
++      '"rails":["flop-htlc","x402"]',
++      '"rails":[{"id":"one","id":"two"}]',
++    );
++    expect(() => decodeFrame(inArray)).toThrow(/duplicate object key: id/);
++
++    const quoteEquivalent = encodeFrame(baseOffer()).replace(
++      '"rails":["flop-htlc","x402"]',
++      '"rails":[{"a\\"b":1,"a\\u0022b":2}]',
++    );
++    expect(() => decodeFrame(quoteEquivalent)).toThrow(/duplicate object key: a"b/);
++
++    const backslashEquivalent = encodeFrame(baseOffer()).replace(
++      '"rails":["flop-htlc","x402"]',
++      '"rails":[{"a\\\\b":1,"a\\u005cb":2}]',
++    );
++    expect(() => decodeFrame(backslashEquivalent)).toThrow(/duplicate object key: a\\b/);
++  });
++
+   it("rejects odd-length pre-signature scalar encodings", () => {
+     expect(() => encodeFrame({
+       type: "lock",

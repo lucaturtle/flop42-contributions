@@ -1,0 +1,27 @@
+{
+  "files": {
+    "CREATOR-APPLICATION.md": "5205ec0ff8ba5741e51217d87dbdbd4c06671ce2fa4ff51dcee4cb2f01d5bacf",
+    "PUBLIC-POST-DRAFT.md": "053cd3a3d02bcd64111bed9f47ff73b85f4af765ec6ec6760169a576b852cf77",
+    "QUEUE-FINDINGS.md": "c578dcede0d48bc9fa1d624bb7888132874f648ccb2bb229f82b4db2af8605c5",
+    "README.md": "873218e58c69c3e5222c63242fbbe77d022dbca2eabf0ca15b739e92d0fb5fc5",
+    "SOURCE-NOTES.md": "b63063ebc47fd4819ee576d40121b35f40b9d7fc28cd898b0860fa367c5cc08d",
+    "TCLK-LICENSE": "9a199b2f98908456e0714c49a9d0ae7b01d43eb85c0005a040a974db5faa982a",
+    "TCLK-SUBMISSION.md": "3aa9bb1acfa026b51b1298c8483a288a06d7904a7bac2d8c33df8b8adac1fcde",
+    "agent-assignments.csv": "306915bf4a3eb2b6b6d556eb4cd8a6541233c56c4026676eacaf03f868b0ba6b",
+    "fixtures/workbench/pyproject.toml": "ebca193ddffd36bf4f043f72c88f06d8c69edc05876cf249bc31be5e0a7e8888",
+    "fixtures/workbench/src/flop_workbench/__init__.py": "dbde1f3a61ba615f0f4a44279bf0fef5a51a495f0fc8b8bd473e54dfd2ab7c0b",
+    "fixtures/workbench/src/flop_workbench/core.py": "fa2ea1a9b0d54f8f01585c6c65f28a12d5d643e4b643c3d38fc48ec5d6be5629",
+    "fixtures/workbench/tests/test_workbench.py": "b2787a00499372a81b8ffc55dece1943f599ee33193ed529c241b4066638c1b5",
+    "offline-diagnostic-receipt.json": "8a3b41c2986ea5abc58b1d8640b6505ed181ade60eb16268ee61cfacf084fa5a",
+    "package-tests.txt": "8602f2150de68fb0011c456da51b58cbf16bd45eabfe72f44cd94288ab5a31bb",
+    "probe_queue.py": "c80e261492763e7cfd60169b69e7cb78d13d9aa8c5b6b37e68a58484e7ec8854",
+    "queue-observations.json": "3dd556e72bddf127aab60c64f24f95d89a251794d4296c5cac916799ba56cb87",
+    "readiness.py": "906b55a423b10095050477c13d98726b2d3e53d6ee0c5e2ceb129f6389a2ef38",
+    "tclk-duplicate-key.patch": "063931ab10a9688a3f90269d097bb21ba5217a0e0d91accce086eb2d645b43d6",
+    "test_readiness.py": "a1434e3f6e321edd50b46d01ac6493998d80e6a4d3fa88699c16c0b4ff683433",
+    "verification-summary.json": "0c17adf32a41533d6b28eab4311e1c2a3aaa2e3c119761376cd85e12c2c10eda",
+    "weekly-evidence.json": "5b2efdbaca5e3c47ba26753409e002f1d8df4959142c7ae3bbaaeac24efa825e",
+    "workloads.json": "7f21b26510fdf58c3dc2df6a30be92ad3172aaa98799a1c7d0844581c73c2f0f"
+  },
+  "schema": "flop42-package-v1"
+}

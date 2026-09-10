@@ -1,0 +1,43 @@
+agent,existing_alias,role,workload,distinct_deliverable,status,common_operator
+Agent 00,bot-01,Chief Coordinator,W12,Reconcile release claims against observed evidence,assigned-not-executed,true
+Agent 01,bot-02,Official Intelligence,W07,"Classify official changes as draft, planned or activated",assigned-not-executed,true
+Agent 02,bot-03,Deduplication & Ecosystem Mapper,W08,Screen upstream issues and pull requests for equivalent fixes,assigned-not-executed,true
+Agent 03,bot-04,Quality Gate,W12,Independently review the exact release manifest before publication,assigned-not-executed,true
+Agent 04,bot-05,Security & Identity Controller,W05,Check the package allowlist and private-key exclusion boundary,assigned-not-executed,true
+Agent 05,bot-06,Technocore I/O Broker,W11,Specify signed-send outcome reconciliation without sending,assigned-not-executed,true
+Agent 06,bot-07,Storage & Concurrency,W02,Design atomic completion and evidence-outbox persistence,assigned-not-executed,true
+Agent 07,bot-08,DID / Signature / Nonce,W07,Specify future DID/account binding only from official requirements,assigned-not-executed,true
+Agent 08,bot-09,Rooms / Retention / Export,W11,Document retention uncertainty separately from weekly completion,assigned-not-executed,true
+Agent 09,bot-10,API / MCP / Schemas,W05,Validate receipt field types and reject unknown claims,assigned-not-executed,true
+Agent 10,bot-11,Reliability & Rate Limiting,W03,Define infrastructure retries separately from product failures,assigned-not-executed,true
+Agent 11,bot-12,Testing & Fuzzing,W01,Expand duplicate-key hostile-input counterexamples,assigned-not-executed,true
+Agent 12,bot-13,Agent Interoperability,W01,Compare decoder rejection behavior across implementations,assigned-not-executed,true
+Agent 13,bot-14,TCLK / Coordination Protocols,W01,Document TCLK decoder-wide versus outbound-only scope,assigned-not-executed,true
+Agent 14,bot-15,Python Developer Tooling,W06,Prepare the Python reproducibility instructions,assigned-not-executed,true
+Agent 15,bot-16,TypeScript / JavaScript Tooling,W01,Recheck TCLK build and unchanged canonical vectors,assigned-not-executed,true
+Agent 16,bot-17,MCP / A2A Integration,W01,Review MCP posting-boundary overlap with PR 124,assigned-not-executed,true
+Agent 17,bot-18,Protocol Documentation Drift,W07,Track specification changes that invalidate a saved input pin,assigned-not-executed,true
+Agent 18,bot-19,DID Explorer,W05,Design a public-only artifact attribution view,assigned-not-executed,true
+Agent 19,bot-20,Technocore Analytics,W09,Define useful outcomes without counting repeated messages,assigned-not-executed,true
+Agent 20,bot-21,Contribution Evidence Index,W03,Validate package digests and evidence lifecycle fields,assigned-not-executed,true
+Agent 21,bot-22,Monitoring & Observability,W03,Define redacted operator health reports,assigned-not-executed,true
+Agent 22,bot-23,Developer Experience,W06,Test the extracted package from a clean directory,assigned-not-executed,true
+Agent 23,bot-24,Visualization / Dashboards,W10,Present results without implying allocation or paid usage,assigned-not-executed,true
+Agent 24,bot-25,FLOP Specification Tracker,W07,Map unresolved Yellow Paper interfaces to blocked adapter features,assigned-not-executed,true
+Agent 25,bot-26,FLOP Provider Adapter,W04,Specify provider idempotency and reconciliation requirements,assigned-not-executed,true
+Agent 26,bot-27,Faucet / Account Readiness,W07,Keep faucet capability disabled until official terms and endpoints exist,assigned-not-executed,true
+Agent 27,bot-28,FLOP Accounting,W04,Separate real token fees from fictional mock units,assigned-not-executed,true
+Agent 28,bot-29,Distributed Job Scheduler,W02,Specify generation-fenced lease completion and expiry semantics,assigned-not-executed,true
+Agent 29,bot-30,Reliability & Session Engine,W02,Retain ambiguous session outcomes without duplicate submission,assigned-not-executed,true
+Agent 30,bot-31,Software Engineering Workload,W09,Turn the five queue findings into failing regression requirements,assigned-not-executed,true
+Agent 31,bot-32,Repository Intelligence Workload,W01,Pin upstream commit and patch hash in each submission draft,assigned-not-executed,true
+Agent 32,bot-33,Research & Document Workload,W07,Cite source limitations in the testnet preparation guide,assigned-not-executed,true
+Agent 33,bot-34,Model Evaluation,W09,Design a blinded evaluation set with adjudicable expected outputs,assigned-not-executed,true
+Agent 34,bot-35,Multi-Agent Evaluation,W09,Review experiment independence and common-operator disclosure,assigned-not-executed,true
+Agent 35,bot-36,Useful-Work Auditor,W09,Reject filler or repeated workloads with no new retained output,assigned-not-executed,true
+Agent 36,bot-37,Bug Triage,W09,Rank confirmed defects by consequence rather than activity volume,assigned-not-executed,true
+Agent 37,bot-38,Documentation / Education,W10,Edit the creator tutorial for reproducibility and accurate claims,assigned-not-executed,true
+Agent 38,bot-39,Integration Discovery,W08,Check integrations against existing upstream capabilities,assigned-not-executed,true
+Agent 39,bot-40,Agent Support,W10,Prepare support answers that never request keys or passphrases,assigned-not-executed,true
+Agent 40,bot-41,Packaging / Release Engineering,W06,Inspect the final archive for exact allowed files and licensing,assigned-not-executed,true
+Agent 41,bot-42,Portfolio Optimizer,W12,Choose the next distinct high-value workload under zero-spend limits,assigned-not-executed,true

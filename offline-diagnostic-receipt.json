@@ -1,0 +1,12 @@
+{
+  "common_operator": true,
+  "external_reference": null,
+  "input_sha256": "fa2ea1a9b0d54f8f01585c6c65f28a12d5d643e4b643c3d38fc48ec5d6be5629",
+  "logical_agent": 0,
+  "mode": "offline",
+  "quality": "fail",
+  "real_token_spend": 0,
+  "result_sha256": "3dd556e72bddf127aab60c64f24f95d89a251794d4296c5cac916799ba56cb87",
+  "schema": "flop42-offline-receipt-v1",
+  "workload_id": "W02"
+}

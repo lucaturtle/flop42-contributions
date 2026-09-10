@@ -1,0 +1,13 @@
+{
+  "airdrop_qualification": "not-established",
+  "common_operator_control": true,
+  "evidence_origin": "operator-pasted runner result",
+  "failed_bots": [],
+  "fresh_readback_this_release": false,
+  "new_checkins": 0,
+  "remaining": 0,
+  "retention_conclusion": "not-established",
+  "targets": 42,
+  "verified": 42,
+  "week": "2026-W37"
+}

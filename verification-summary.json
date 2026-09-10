@@ -1,0 +1,19 @@
+{
+  "diagnostic_findings": 5,
+  "network_spend": 0,
+  "new_package_independent_review": "pending",
+  "package_unit_tests": {
+    "exit_code": 0,
+    "passed": 12
+  },
+  "public_submission": null,
+  "recorded_at": "2026-09-10T10:25:53.046886+00:00",
+  "tclk_prior_independent_review": "approved-for-exact-patch-hash",
+  "tclk_tests": {
+    "evidence_origin": "coordinator-executed build/test output, 2026-09-10",
+    "library": 105,
+    "mcp": 40,
+    "total": 178,
+    "worker": 33
+  }
+}

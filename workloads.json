@@ -1,0 +1,277 @@
+{
+  "common_operator_control": true,
+  "mode": "offline-preparation",
+  "schema": "flop42-prepared-workloads-v1",
+  "workloads": [
+    {
+      "expected_output": "A counterexample table covering nested, escaped and canonical nonduplicate members",
+      "external_receipt": null,
+      "id": "W01",
+      "input": {
+        "path": "tclk-duplicate-key.patch",
+        "sha256": "063931ab10a9688a3f90269d097bb21ba5217a0e0d91accce086eb2d645b43d6"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "TCLK duplicate-member rejection review",
+      "provider": null,
+      "quality_gate": "Every claim has an input and expected rejection; golden vectors remain unchanged",
+      "real_token_budget": 0,
+      "roles": [
+        11,
+        12,
+        13,
+        15,
+        16,
+        31
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "A minimal API proposal and stale-worker regression requirements",
+      "external_receipt": null,
+      "id": "W02",
+      "input": {
+        "path": "fixtures/workbench/src/flop_workbench/core.py",
+        "sha256": "fa2ea1a9b0d54f8f01585c6c65f28a12d5d643e4b643c3d38fc48ec5d6be5629"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Lease expiry and generation fencing",
+      "provider": null,
+      "quality_gate": "Reject expiry and worker-name reuse without losing recoverability",
+      "real_token_budget": 0,
+      "roles": [
+        6,
+        28,
+        29
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "Atomic-outbox design with crash-point matrix",
+      "external_receipt": null,
+      "id": "W03",
+      "input": {
+        "path": "probe_queue.py",
+        "sha256": "c80e261492763e7cfd60169b69e7cb78d13d9aa8c5b6b37e68a58484e7ec8854"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Crash-safe completion evidence",
+      "provider": null,
+      "quality_gate": "Every durable completion has one recoverable receipt; no automatic resubmission",
+      "real_token_budget": 0,
+      "roles": [
+        10,
+        20,
+        21
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "A request-idempotency contract separating mock units from settled fees",
+      "external_receipt": null,
+      "id": "W04",
+      "input": {
+        "path": "fixtures/workbench/src/flop_workbench/core.py",
+        "sha256": "fa2ea1a9b0d54f8f01585c6c65f28a12d5d643e4b643c3d38fc48ec5d6be5629"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Mock provider idempotency",
+      "provider": null,
+      "quality_gate": "Same logical request is not charged twice; unknown live outcomes remain unresolved",
+      "real_token_budget": 0,
+      "roles": [
+        25,
+        27
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "Additional parser and manifest attack cases",
+      "external_receipt": null,
+      "id": "W05",
+      "input": {
+        "path": "readiness.py",
+        "sha256": "906b55a423b10095050477c13d98726b2d3e53d6ee0c5e2ceb129f6389a2ef38"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Evidence verifier hostile-input review",
+      "provider": null,
+      "quality_gate": "Reject duplicate JSON, path escape, extra files and forged live-usage fields",
+      "real_token_budget": 0,
+      "roles": [
+        4,
+        9,
+        18
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "A platform-labelled reproducibility report",
+      "external_receipt": null,
+      "id": "W06",
+      "input": {
+        "path": "README.md",
+        "sha256": "873218e58c69c3e5222c63242fbbe77d022dbca2eabf0ca15b739e92d0fb5fc5"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Clean-room reproduction",
+      "provider": null,
+      "quality_gate": "Run from extracted archive, no network or hidden source paths; report untested platforms",
+      "real_token_budget": 0,
+      "roles": [
+        14,
+        22,
+        40
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "A cited required-versus-available interface checklist",
+      "external_receipt": null,
+      "id": "W07",
+      "input": {
+        "path": "SOURCE-NOTES.md",
+        "sha256": "b63063ebc47fd4819ee576d40121b35f40b9d7fc28cd898b0860fa367c5cc08d"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Activation-spec gap mapping",
+      "provider": null,
+      "quality_gate": "Draft prose cannot activate a provider; missing contracts stay explicitly unset",
+      "real_token_budget": 0,
+      "roles": [
+        1,
+        7,
+        17,
+        24,
+        26,
+        32
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "A precise scope comparison with adjacent public pull requests",
+      "external_receipt": null,
+      "id": "W08",
+      "input": {
+        "path": "TCLK-SUBMISSION.md",
+        "sha256": "3aa9bb1acfa026b51b1298c8483a288a06d7904a7bac2d8c33df8b8adac1fcde"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Upstream overlap decision",
+      "provider": null,
+      "quality_gate": "A duplicate solution stops a submission; uncertainty is not a no-overlap verdict",
+      "real_token_budget": 0,
+      "roles": [
+        2,
+        38
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "An adjudication rubric with held-out positive and negative examples",
+      "external_receipt": null,
+      "id": "W09",
+      "input": {
+        "path": "QUEUE-FINDINGS.md",
+        "sha256": "c578dcede0d48bc9fa1d624bb7888132874f648ccb2bb229f82b4db2af8605c5"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Useful-output evaluation rubric",
+      "provider": null,
+      "quality_gate": "Score reproducible correctness, not messages, roles or token spending",
+      "real_token_budget": 0,
+      "roles": [
+        19,
+        30,
+        33,
+        34,
+        35,
+        36
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "An accurate tutorial and safe-key-handling FAQ",
+      "external_receipt": null,
+      "id": "W10",
+      "input": {
+        "path": "CREATOR-APPLICATION.md",
+        "sha256": "5205ec0ff8ba5741e51217d87dbdbd4c06671ce2fa4ff51dcee4cb2f01d5bacf"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Creator tutorial and support",
+      "provider": null,
+      "quality_gate": "No invented audience, public URL, allocation promise or key collection",
+      "real_token_budget": 0,
+      "roles": [
+        23,
+        37,
+        39
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "An explanation separating supplied receipts from new read-back",
+      "external_receipt": null,
+      "id": "W11",
+      "input": {
+        "path": "weekly-evidence.json",
+        "sha256": "5b2efdbaca5e3c47ba26753409e002f1d8df4959142c7ae3bbaaeac24efa825e"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Weekly and retention evidence boundary",
+      "provider": null,
+      "quality_gate": "Preserve 42/42 history without check-ins; never infer retention completion",
+      "real_token_budget": 0,
+      "roles": [
+        5,
+        8
+      ],
+      "status": "prepared-not-executed"
+    },
+    {
+      "expected_output": "A reviewer-signed material-revision verdict and next-work recommendation",
+      "external_receipt": null,
+      "id": "W12",
+      "input": {
+        "path": "README.md",
+        "sha256": "873218e58c69c3e5222c63242fbbe77d022dbca2eabf0ca15b739e92d0fb5fc5"
+      },
+      "live_dispatch": false,
+      "model": null,
+      "network_retries": 0,
+      "objective": "Release review and portfolio selection",
+      "provider": null,
+      "quality_gate": "Independent review evidence required; no self-issued approval or fake external state",
+      "real_token_budget": 0,
+      "roles": [
+        0,
+        3,
+        41
+      ],
+      "status": "prepared-not-executed"
+    }
+  ]
+}
